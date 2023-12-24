@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Christmas</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <h1>Hey there! Enter your name to see what's in the gift for you(There are special gifts for certain people,You may try the name used to mock you)..</h1>
+  <div class="container">
+  <marquee><div class="card" id="Greetings">
+    <h1>Merry Christmas</h1>
+  </div></marquee><br/><br/><br/><br/><br/><br/>
+  <div class="form">
+  <form action="#card2">
+    <div class="mb-3">
+      <label for="name" class="form-label">NAME</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+      <div class="form-text">SANTA DOESN'T RECORD NAMES, ENTER TRUE NAME TO GET GIFTS THAT ARE INTENDED FOR YOU(IF ANY)</div>
+    </div>
+    <button type="submit" id="submit" onclick="change()" class="btn btn-danger">Submit</button>
+  </form>
+  </div>
+  </div>
+  <br/><br/>
+  <div id="card2" class="card2">
+    <H1>YOUR PRESENT IS HERE</H1><br/><br/>
+    <img src="images/santa.gif">
+    <p id="show">ENTER YOUR NAME TO SEE YOUR GIFT!</p>
+  </div>
+  <img src="images/santa.gif" style="float: left;width:30%;">
+  <div class="feedback">
+    <a href = "mailto: yuria4489@gmail.com"  class="card-title" style="text-decoration:none"><button class="btn btn-success"> YOUR FEEDBACK (I AM EXPECTING SOME THANK YOU) hO..Ho..hO..</button></a>
+  </div><br/>
+  <div class="more">
+    <a href = "https://santatracker.google.com/intl/en/"  class="card-title" style="text-decoration:none"><button class="btn btn-warning">FOR MORE CLICK HERE</button></a>
+  </div>
+  <script>
+    var T=1;
+    const audio1 = new Audio("merry.mp3");
+    if(T===1){
+      audio1.play();
+    }
+    function change() {
+    arrn=['amsera','aman','monishankar','taeri','bishal','pegu','gas','petla','pn','hirak','soku','tempo','neha'];
+    arra=['Well my child! You have a great voice, my gift to you is the luck and fortune to be a great personality.','Here is your gift son! A brand new horn📯','Your gift is a pair of eye👀',"You're already blessed, i can only give you good luck for you to be the best, Ho..Ho..hO..",'I guess I am too poor to give you something, how about a wish, I can do it all day! Ho..Ho..hO..Merry Christmas','Here! I give you a ticket to Antarctica 🎫','⛽','🍗🥩🥠🥟🥡🍱🥣 this christmas dont eat these, and lose some fats, Ho..Ho..hO','🐷 meal for you','Santa gives you wingsss🦅🦅','Your gift is a pair of eye👀','Here is your gift son! A brand new horn📯','In 2024 you will get everything you want'];
+    arrr=['Try other name, maybe you dont know what the creator calls you🤔? Still hanging? Maybe the creator forget to gift you. Well santa have gifts for everyone, you might get it today or tomorrow in any form😄, Merry Christmas','🎈','⚽','🥇','🎸','📱','🖋','⏰','🥪','🚲'];
+      var ans=-1;
+      var name=document.getElementById("name").value;
+      for(i=0;i<12;i++){
+        if(name.toLowerCase()==arrn[i]){
+          ans=i;
+        }
+      }if(ans===-1){
+        ans = Math.floor((Math.random() * 10));
+        if(ans!==0){
+          document.getElementById("show").innerHTML="Here's your gift:<br/>"+arrr[ans]+"<br/>.. Merry Christmas. Ho..Ho..hO..";
+        }else{
+          document.getElementById("show").innerHTML=arrr[ans];
+        }
+      }else{
+        document.getElementById("show").innerHTML=arra[ans];
+      }
+      T=0;
+      const audio2 = new Audio("happy.mp3");
+      audio1.pause();
+      audio2.pause();
+      audio2.play();
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
